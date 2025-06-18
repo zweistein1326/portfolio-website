@@ -68,16 +68,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const container = document.getElementById("container");
         container.classList.add('slide-out');
         setTimeout(() => {
-            window.location.href = '/index.html';
+            window.location.href = 'index.html';
         }, 500);
     });
     worksButton.addEventListener('click', (e) => {
         e.preventDefault();
-        if(window.location.pathname.includes("/works.html")){return;}
+        if(window.location.pathname.includes("works.html")){return;}
         const container = document.getElementById("container");
         container.classList.add('slide-out');
         setTimeout(() => {
-            window.location.href = '/public/works.html';
+            window.location.href = 'works.html';
         }, 500);
     });
     aboutButton.addEventListener('click', (e) => {
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         const container = document.getElementById("container");
         container.classList.add('slide-out');
         setTimeout(() => {
-            window.location.href = '/public/about.html';
+            window.location.href = 'about.html';
         }, 500);
     });
 
