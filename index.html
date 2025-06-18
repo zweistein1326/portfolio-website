@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Siddharth Agarwal</title>
+    <meta name="description" content="Agarwal is a 25 years-old front-end developer who cares about design. His focus is on precise integration and crafting innovative interactions."/>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- The pre-loader. This will be visible on page load. -->
+    <div class="preloader">
+        <div class="loader-content">
+            <h1 class="loader-title" style="text-align: left; width: 100%; min-height:140px;" data-text="Siddharth Agarwal"> </h1>
+            <h2 class="loader-title" style="text-align: center; width: 100%; min-height:140px;" data-text="Front-end">  </h2>
+            <h2 class="loader-title" style="text-align: right; width: 100%; min-height:140px;" data-text="Developer">  </h2>
+        </div>
+    </div>
+
+    <!-- The main page content. This starts off hidden. -->
+     <main class="main-content">
+        <div id="cursor-dot"></div>
+        <div id="cursor-follower"></div>
+        <div class="container" id="container">
+            <h1 class="title" data-text="Sid Agarwal">Sid Agarwal</h1>
+            <div class="hero-info-container">
+                <div class="hero-image-container">
+                    <img class="hero-image" src="public/images/home/hero-gif.gif"/>
+                    <p class="large">
+                        Bringing designs to life with pixel-perfect precision and smooth animations.
+                    </p>
+                </div>
+                <div class="hero-buttons-container">
+                    <p>I'm a 25 years-old front-end developer who cares about design. My focus is on precise integration and crafting innovative interactions.</p>
+                    <div class="buttons-container">
+                        <a href="works.html" class="button primary animated-button" data-text="See my projects"><span>See my projects</span></a>
+                        <a href="overview.html" class="button secondary">Quick Overview</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navigation-container">
+            <nav class="navigation">
+                    <div class="nav-background"></div>
+                    <button id="home-button" class="active animated-button" data-text="Home"><span>Home</span></button>
+                    <button id="works-button" class="animated-button" data-text="Work"><span>Work</span></button>
+                    <button id="about-button" class="animated-button" data-text="About"><span>About</span></button>
+                </nav>
+        </div>
+    </main>
+    <style>
+        @keyframes slide-in-from-right {
+            from {
+                transform: translateX(100vw);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        /*
+         * ===================================================================
+         * Page Transition Animations
+         * ===================================================================
+        */
+        @keyframes slide-out-to-left {
+            from { transform: translateX(0); }
+            to { transform: translateX(-100%); }
+        }
+
+        @keyframes slide-in-from-right {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        body {
+            max-height: 100vh;
+        }
+
+        .preloader.slide-out {
+            animation: slide-out-to-left 0.8s forwards cubic-bezier(0.7, 0, 0.3, 1);
+        }
+
+        .main-content.slide-in {
+            opacity: 1;
+            pointer-events: auto;
+            animation: slide-in-from-right 0.8s forwards cubic-bezier(0.7, 0, 0.3, 1);
+        }
+    </style>
+</body>
+</html>
