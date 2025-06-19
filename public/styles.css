@@ -27,53 +27,6 @@ body {
 }
 
 /*
-    * ===================================================================
-    * Pre-loader Styles
-    * ===================================================================
-*/
-.preloader {
-    max-height: 100vh;
-    padding: 24px 24px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #000;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Ensures it's on top */
-}
-
-.loader-content {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.loader-title {
-    font-style: normal;
-    font-size: 108px;
-    font-weight: 300;
-    margin: 0;
-    letter-spacing: -6.5px;
-    text-transform: lowercase;
-}
-
-.loader-title span,
-.loader-subtitle span {
-    opacity: 0;
-    display: inline-block;
-    animation: fadeInLetter 0.5s forwards;
-}
-
-/*
 * Styles for the main custom cursor element (the leader dot).
 */
 #cursor-dot {
@@ -129,6 +82,8 @@ body {
     * Styles for the animated button
 */
 .animated-button {
+    background-color: transparent;
+    border: 0px;
     position: relative; /* Needed for positioning the pseudo-element */
     cursor: pointer;
     overflow: hidden; /* Crucial for the effect */
@@ -169,6 +124,58 @@ button {
     font-size: 16px !important;
 }
 
+
+/*
+    * ===================================================================
+    * Pre-loader Styles
+    * ===================================================================
+*/
+@media only screen and (max-width: 768px) {
+    .preloader {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000; /* Ensures it's on top */
+    }
+
+    .loader-content {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 24px;
+    }
+
+    .loader-title {
+        font-style: normal;
+        font-size: 40px;
+        font-weight: 300;
+        margin: 0;
+        letter-spacing: -2.5px;
+        text-transform: lowercase;
+        min-height: 60px;
+    }
+
+    .loader-title span,
+    .loader-subtitle span {
+        opacity: 0;
+        display: inline-block;
+        animation: fadeInLetter 0.5s forwards;
+    }
+}
 /*
     * Styles for Page Transition Animation
 */
@@ -211,8 +218,8 @@ h3 {
 .container {
     display: flex;
     flex-direction: column;
-    gap: 24px;
     padding: 12px;
+    height: 100%;
 }
 
 .button {
@@ -260,6 +267,8 @@ p.bold {
     padding: 0;
     margin: 0;
     text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: -6.5px;
 }
 
 .hero-info-container {
