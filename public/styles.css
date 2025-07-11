@@ -3,6 +3,7 @@
 /* Global Styles Start */
 html {
     box-sizing: border-box;
+    cursor: none;
 }
 
 body {
