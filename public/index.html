@@ -9,47 +9,51 @@
     <script src="script.js"></script>
     <meta property="og:image" content="images/og-image.png">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script></head>
 <body>
-    <!-- The pre-loader. This will be visible on page load. -->
-    <div class="preloader">
-        <div class="loader-content">
-            <h1 class="loader-title" style="text-align: left; width: 100%;" data-text="Siddharth Agarwal"> </h1>
-            <h2 class="loader-title" style="text-align: center; width: 100%;" data-text="Front-end">  </h2>
-            <h2 class="loader-title" style="text-align: right; width: 100%;" data-text="Developer">  </h2>
-        </div>
-    </div>
-
-    <!-- The main page content. This starts off hidden. -->
-     <main class="main-content">
-        <div id="cursor-dot"></div>
-        <div id="cursor-follower"></div>
-        <div class="container" id="container">
-            <h1 class="title" data-text="Sid Agarwal">Sid Agarwal</h1>
-            <div class="hero-info-container">
-                <div class="hero-image-container">
-                    <img class="hero-image" src="images/home/hero-gif.gif"/>
-                    <p class="large">
-                        Bringing designs to life with pixel-perfect precision and smooth animations.
-                    </p>
-                </div>
-                <div class="hero-buttons-container">
-                    <p>I'm a 25 years-old front-end developer who cares about design. My focus is on precise integration and crafting innovative interactions.</p>
-                    <div class="buttons-container">
-                        <a href="works.html" class="button primary animated-button" data-text="See my projects"><span>See my projects</span></a>
-                        <a href="overview.html" class="button secondary">Quick Overview</a>
-                    </div>
-                </div>
+    <div class="body-container">
+        <div id="preloader" class="preloader">
+            <div class="loader-content">
+                <h1 id="loader-title" data-text="Sid Agarwal">Sid Agarwal</h1>
+                <div class="line"></div>
             </div>
         </div>
-    </main>
-    <div class="navigation-container">
-        <nav class="navigation">
-                <div class="nav-background"></div>
-                <button id="home-button" class="active animated-button" data-text="Home"><span>Home</span></button>
-                <button id="works-button" class="animated-button" data-text="Work"><span>Work</span></button>
-                <button id="about-button" class="animated-button" data-text="About"><span>About</span></button>
+        <div id="content" class="content">
+            <nav class="navigation">
+                <div class="logo-container">
+                    <a class="nav-link" href="index.html">
+                        <!-- <span style="font-size: 16px; text-transform: uppercase;">Sid Agarwal</span> -->
+                    </a>
+                </div>
+                <div class="links-container">
+                    <a href="index.html" class="nav-link active">Home</a>
+                    <a href="works.html" class="nav-link">Work</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="mailto:sid.agarwal45@gmail.com" class="nav-link">Contact</a>
+                </div>
             </nav>
+            <main>
+                <div id="home-container" class="container">
+                    <div><img src="images/home/hero-image-2.png"/></div>
+                    <div>
+                        <h1>
+                            <span style="opacity: 1;">Crafting clean and delightful user experiences that align with business goals.</span>
+                            <span style="font-size: 16px; line-height: 1; opacity: 1;">Experience Designer, Software Engineer and Entrepreneur.</span>
+                        </h1>
+                        <div class="buttons-container">
+                            <a href="works.html" class="nav-link button primary animated-button" data-text="See my work"><span>See my work</span></a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
     </div>
     <style>
         @keyframes slide-in-from-right {
@@ -76,10 +80,6 @@
         @keyframes slide-in-from-right {
             from { transform: translateX(100%); }
             to { transform: translateX(0); }
-        }
-
-        body {
-            max-height: 100vh;
         }
 
         .preloader.slide-out {

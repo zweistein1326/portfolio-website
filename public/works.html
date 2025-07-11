@@ -9,80 +9,90 @@
     <script src="script.js"></script>
     <meta property="og:image" content="images/og-image.png">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/SplitText.min.js"></script></head>
 <body>
     <div id="cursor-dot"></div>
     <div id="cursor-follower"></div>
-    <div class="container" id="container">
-        <div class="works-grid">
-            <a class="work-item" href="https://atelier-shan.com" target="_blank">
-                <img src="images/works/atelier-shan.png"/>
-                <div class="work-item-title">
-                    <h2>Atelier Shan</h2>
+    <div class="body-container">
+        <div class="content">
+            <nav class="navigation">
+                <div class="logo-container">
+                    <a class="nav-link" href="index.html"><span style="font-size: 16px; text-transform: uppercase;">Sid Agarwal</span></a>
                 </div>
-            </a>
-            <a class="work-item" href="https://srk-hautehorlogerie.com" target="_blank">
-                <img src="images/works/srkhh.png"/>
-                <div class="work-item-title">
-                    <h2>SRK Haute Horlogerie</h2>
+                <div class="links-container">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="works.html" class="nav-link active">Work</a>
+                    <a href="about.html" class="nav-link ">About</a>
+                    <a href="mailto:sid.agarwal45@gmail.com" class="nav-link ">Contact</a>
                 </div>
-            </a>
-            <a class="work-item" href="https://enclave-studios.com" target="_blank">
-                <img src="images/works/enclave-studios.png"/>
-                <div class="work-item-title">
-                    <h2>Enclave Studios</h2>
+            </nav>
+            <main>
+                <div class="container">
+                    <div class="works-container">
+                        <a class="work-item" href="https://atelier-shan.com" target="_blank">
+                            <img src="images/works/project-1.png"/>
+                            <div class="work-item-title">
+                                <h2>Atelier Shan</h2>
+                            </div>
+                        </a>
+                        <a class="work-item" href="https://srk-hautehorlogerie.com" target="_blank">
+                            <img src="images/works/project-2.png"/>
+                            <div class="work-item-title">
+                                <h2>SRK Haute Horlogerie</h2>
+                            </div>
+                        </a>
+                        <a class="work-item" href="https://enclave-studios.com" target="_blank">
+                            <img src="images/works/project-3.png"/>
+                            <div class="work-item-title">
+                                <h2>Enclave Studios</h2>
+                            </div>
+                        </a>
+                        <a class="work-item" href="https://go-gym.webflow.io" target="_blank">
+                            <img src="images/works/project-4.png"/>
+                            <div class="work-item-title">
+                                <h2>Go Gym</h2>
+                            </div>
+                        </a>
+                        <a class="work-item" href="https://amarta-sari.webflow.io" target="_blank">
+                            <img src="images/works/project-5.png"/>
+                            <div class="work-item-title">
+                                <h2>Amarta Sari</h2>
+                            </div>
+                        </a>
+                        <a class="work-item" href="https://eterna-luxe.webflow.io" target="_blank">
+                            <img src="images/works/project-6.png"/>
+                            <div class="work-item-title">
+                                <h2>Eterna Luxe</h2>
+                            </div>
+                        </a>
+                        <a class="work-item" href="/" target="_blank">
+                            <img src="images/works/project-7.png"/>
+                            <div class="work-item-title">
+                                <h2>Sleepyhead</h2>
+                            </div>
+                        </a>
+                        <a class="work-item" href="/" target="_blank">
+                            <img src="images/works/project-8.png"/>
+                            <div class="work-item-title">
+                                <h2>Sleepyhead</h2>
+                            </div>
+                        </a>
+                        <a class="work-item" href="/" target="_blank">
+                            <img src="images/works/project-9.png"/>
+                            <div class="work-item-title">
+                                <h2>Sleepyhead</h2>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-            </a>
-            <a class="work-item" href="https://go-gym.webflow.io" target="_blank">
-                <img src="images/works/go-gym.png"/>
-                <div class="work-item-title">
-                    <h2>Go Gym</h2>
-                </div>
-            </a>
-            <a class="work-item" href="https://amarta-sari.webflow.io" target="_blank">
-                <img src="images/works/amarta-sari.png"/>
-                <div class="work-item-title">
-                    <h2>Amarta Sari</h2>
-                </div>
-            </a>
-            <a class="work-item" href="https://eterna-luxe.webflow.io" target="_blank">
-                <img src="images/works/eterna-luxe.png"/>
-                <div class="work-item-title">
-                    <h2>Eterna Luxe</h2>
-                </div>
-            </a>
-            <a class="work-item" href="/" target="_blank">
-                <img src="images/works/sleepyhead.png"/>
-                <div class="work-item-title">
-                    <h2>Sleepyhead</h2>
-                </div>
-            </a>
+            </main>
         </div>
     </div>
-    <div class="navigation-container">
-        <nav class="navigation">
-            <div class="nav-background"></div>
-            <button id="home-button" class="animated-button" data-text="Home"><span>Home</span></button>
-            <button id="works-button" class="active animated-button" data-text="Work"><span>Work</span></button>
-            <button id="about-button" class="animated-button" data-text="About"><span>About</span></button>
-        </nav>
-    </div>
-    <style>
-        /* @keyframes slide-in-from-right {
-            from {
-                transform: translateX(100vw);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        .container {
-            animation: slide-in-from-right 0.5s forwards cubic-bezier(0.7, 0, 0.3, 1);
-            max-height: 100vh;
-        } */
-    </style>
 </body>
 </html>
