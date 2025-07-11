@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     });
     // --- PAGE LOAD ANIMATION ---
     // This logic determines whether to show the preloader or the slide-in animation.
-    if (!sessionStorage.getItem('hasVisited') && window.location.pathname.includes("index.html")) {
+    if (!sessionStorage.getItem('hasVisited') && !(window.location.pathname.includes("works.html") || window.location.pathname.includes("about.html"))) {
         // --- FIRST VISIT IN SESSION: RUN PRELOADER ---
         sessionStorage.setItem('hasVisited', 'true');
         animatePreloader(tl);
