@@ -13,8 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" async></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
     <div id="cursor-dot"></div>
@@ -26,8 +26,7 @@
                     <a class="nav-link" href="index.html"><span style="font-size: 16px; text-transform: uppercase;">Sid Agarwal</span></a>
                 </div>
                 <div class="links-container">
-                    <a href="index.html" class="nav-link">Home</a>
-                    <a href="works.html" class="nav-link ">Work</a>
+                    <a href="works.html" class="nav-link ">Works</a>
                     <a href="about.html" class="nav-link active">About</a>
                     <a href="mailto:sid.agarwal45@gmail.com" class="nav-link ">Contact</a>
                 </div>
@@ -37,7 +36,7 @@
                     <div class="about-hero">
                         <div>
                             <h1 class="title">About Me</h1>
-                            <p>I’m a 25 year old Hong Kong based frontend developer with a strong focus on design. After graduating from the University of Hong Kong and mastering web development, I specialized in front-end, micro-interactions and animations. Passionate about crafting seamless user experiences, I also serve as a judge for Awwwards.</p>
+                            <p>I’m a 25 year old Hong Kong based frontend developer with a strong focus on design. After graduating from the University of Hong Kong and mastering web development, I specialized in front-end, micro-interactions and animations. Passionate about crafting seamless user experiences.</p>
                         </div>
                         <img fetchpriority="high" src="images/about/headshot.webp" alt="Siddharth Agarwal"/>
                     </div>
@@ -51,19 +50,28 @@
                             <div class="run-stat-container">
                                 <div class="run-stat">
                                     <p class="large bold">Total Distance (This Year)</p>
-                                    <p class="large">55.9KM</p>
+                                    <div style="width:100% ;display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+                                        <p class="large">186.9KM</p>
+                                        <a href="https://strava.app.link/h3KQUfneWUb" target="_blank"><img class="run-stat-icon" src="images/about/Arrow 1.svg"/></a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="run-stat-container">
                                 <div class="run-stat">
-                                    <p class="large bold">Number of Runs (This Month)</p>
-                                    <p class="large">7 runs this month</p>
+                                    <p class="large bold">Distance covered (Last 30 days)</p>
+                                    <div style="width:100% ;display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+                                        <p class="large">131.0km in last 30 days</p>
+                                        <a href="https://strava.app.link/h3KQUfneWUb" target="_blank"><img class="run-stat-icon" src="images/about/Arrow 1.svg"/></a>
+                                    </div>
                                 </div>
                             </div>
                             <div class="run-stat-container">
                                 <div class="run-stat">
                                     <p class="large bold">Longest Run (All Time)</p>
-                                    <p class="large">25.9KM</p>
+                                    <div style="width:100% ;display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
+                                        <p class="large">25.9KM</p>
+                                        <a href="https://strava.app.link/h3KQUfneWUb" target="_blank"><img class="run-stat-icon" src="images/about/Arrow 1.svg"/></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
