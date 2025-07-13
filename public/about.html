@@ -85,7 +85,7 @@
     </div>
     <script>
         // Replace 'YOUR_ACCESS_TOKEN' with your actual Strava access token
-        const accessToken = '7b4ae7eba7c6de1ed93dff0234c33375082b6384';
+        const accessToken = process.env.API_KEY;
         // const apiUrl = 'https://www.strava.com/api/v3/athlete/activities';
 
         async function getYTDRunTotal() {
