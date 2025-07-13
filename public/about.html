@@ -51,16 +51,16 @@
                                 <div class="run-stat">
                                     <p class="large bold">Total Distance (This Year)</p>
                                     <div style="width:100% ;display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
-                                        <p class="large">186.9KM</p>
+                                        <p id="ytd-total" class="large">190KM</p>
                                         <a href="https://strava.app.link/h3KQUfneWUb" target="_blank"><img class="run-stat-icon" src="images/about/Arrow 1.svg"/></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="run-stat-container">
                                 <div class="run-stat">
-                                    <p class="large bold">Distance covered (Last 30 days)</p>
+                                    <p class="large bold">Distance covered (This Month)</p>
                                     <div style="width:100% ;display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
-                                        <p class="large">131.0km in last 30 days</p>
+                                        <p id="30-days-total" class="large">131.0km this month</p>
                                         <a href="https://strava.app.link/h3KQUfneWUb" target="_blank"><img class="run-stat-icon" src="images/about/Arrow 1.svg"/></a>
                                     </div>
                                 </div>
@@ -83,5 +83,113 @@
             </main>
         </div>
     </div>
+    <script>
+        // Replace 'YOUR_ACCESS_TOKEN' with your actual Strava access token
+        const accessToken = '7b4ae7eba7c6de1ed93dff0234c33375082b6384';
+        // const apiUrl = 'https://www.strava.com/api/v3/athlete/activities';
+
+        async function getYTDRunTotal() {
+            const now = new Date();
+            const beginningOfYear = new Date(now.getFullYear(), 1, 1);
+            const endOfMonth = new Date(now.getFullYear(), 12, 0, 23, 59, 59);
+
+            const afterTimestamp = Math.floor(beginningOfYear.getTime() / 1000);
+            const beforeTimestamp = Math.floor(endOfMonth.getTime() / 1000);
+
+            let page = 1;
+            let totalDistance = 0;
+            let hasMoreActivities = true;
+
+            while (hasMoreActivities) {
+                const url = `https://www.strava.com/api/v3/athlete/activities?before=${beforeTimestamp}&after=${afterTimestamp}&page=${page}&per_page=100`;
+
+                try {
+                    const response = await fetch(url, {
+                        headers: {
+                            'Authorization': `Bearer ${accessToken}`
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const activities = await response.json();
+
+                    if (activities.length > 0) {
+                        for (const activity of activities) {
+                            if (activity.type === 'Run') {
+                                totalDistance += activity.distance;
+                            }
+                        }
+                        page++;
+                    } else {
+                        hasMoreActivities = false;
+                    }
+
+                } catch (error) {
+                    console.error("Error fetching Strava activities:", error);
+                    document.getElementById('ytd-total').textContent = 'Error fetching data.';
+                    hasMoreActivities = false; // Stop the loop on error
+                }
+            }
+
+            const totalKilometers = totalDistance / 1000;
+            document.getElementById('ytd-total').textContent = `${totalKilometers.toFixed(2)} km`;
+        }
+
+        async function getMonthlyRunTotal() {
+            const now = new Date();
+            const beginningOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
+            const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+
+            const afterTimestamp = Math.floor(beginningOfMonth.getTime() / 1000);
+            const beforeTimestamp = Math.floor(endOfMonth.getTime() / 1000);
+
+            let page = 1;
+            let totalDistance = 0;
+            let hasMoreActivities = true;
+
+            while (hasMoreActivities) {
+                const url = `https://www.strava.com/api/v3/athlete/activities?before=${beforeTimestamp}&after=${afterTimestamp}&page=${page}&per_page=100`;
+
+                try {
+                    const response = await fetch(url, {
+                        headers: {
+                            'Authorization': `Bearer ${accessToken}`
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+
+                    const activities = await response.json();
+
+                    if (activities.length > 0) {
+                        for (const activity of activities) {
+                            if (activity.type === 'Run') {
+                                totalDistance += activity.distance;
+                            }
+                        }
+                        page++;
+                    } else {
+                        hasMoreActivities = false;
+                    }
+
+                } catch (error) {
+                    console.error("Error fetching Strava activities:", error);
+                    document.getElementById('30-days-total').textContent = 'Error fetching data.';
+                    hasMoreActivities = false; // Stop the loop on error
+                }
+            }
+
+            const totalKilometers = totalDistance / 1000;
+            document.getElementById('30-days-total').textContent = `${totalKilometers.toFixed(2)} km`;
+        }
+
+        getMonthlyRunTotal();
+        getYTDRunTotal();
+    </script>
 </body>
 </html>
