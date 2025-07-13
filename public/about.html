@@ -134,7 +134,7 @@
             }
 
             const totalKilometers = totalDistance / 1000;
-            document.getElementById('ytd-total').textContent = `${totalKilometers.toFixed(2)} km`;
+            document.getElementById('ytd-total').textContent = `${totalKilometers.toFixed(2) ?? 193.9} km`;
         }
 
         async function getMonthlyRunTotal() {
@@ -184,11 +184,11 @@
             }
 
             const totalKilometers = totalDistance / 1000;
-            document.getElementById('30-days-total').textContent = `${totalKilometers.toFixed(2)} km`;
+            document.getElementById('30-days-total').textContent = `${totalKilometers.toFixed(2) ?? 131.2} km`;
         }
         
-            getMonthlyRunTotal();
-            getYTDRunTotal();
+        getMonthlyRunTotal();
+        getYTDRunTotal();
     </script>
 </body>
 </html>
