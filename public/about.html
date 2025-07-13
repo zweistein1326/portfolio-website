@@ -84,8 +84,7 @@
         </div>
     </div>
     <script>
-        // Replace 'YOUR_ACCESS_TOKEN' with your actual Strava access token
-        const accessToken = process.env.API_KEY;
+        const accessToken = "7b4ae7eba7c6de1ed93dff0234c33375082b6384";
         // const apiUrl = 'https://www.strava.com/api/v3/athlete/activities';
 
         async function getYTDRunTotal() {
@@ -187,9 +186,11 @@
             const totalKilometers = totalDistance / 1000;
             document.getElementById('30-days-total').textContent = `${totalKilometers.toFixed(2)} km`;
         }
-
-        getMonthlyRunTotal();
-        getYTDRunTotal();
+        
+        document.addEventListener('DOMContentLoaded', async () => {
+            getMonthlyRunTotal();
+            getYTDRunTotal();
+        });
     </script>
 </body>
 </html>
