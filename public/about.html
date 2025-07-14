@@ -58,9 +58,9 @@
                             </div>
                             <div class="run-stat-container">
                                 <div class="run-stat">
-                                    <p class="large bold">Distance covered (This Month)</p>
+                                    <p class="large bold">Distance covered (Last 30 days)</p>
                                     <div style="width:100% ;display: flex; flex-direction: row; align-items: center; justify-content: space-between;">
-                                        <p id="30-days-total" class="large">131.0km this month</p>
+                                        <p id="30-days-total" class="large">131.0km in last 30 days</p>
                                         <a href="https://strava.app.link/h3KQUfneWUb" target="_blank"><img class="run-stat-icon" src="images/about/Arrow 1.svg"/></a>
                                     </div>
                                 </div>
@@ -134,7 +134,7 @@
             }
 
             const totalKilometers = totalDistance / 1000;
-            document.getElementById('ytd-total').textContent = `${totalKilometers.toFixed(2) ?? 193.9} km`;
+            document.getElementById('ytd-total').textContent = `${193.9} km`;
         }
 
         async function getMonthlyRunTotal() {
@@ -184,7 +184,7 @@
             }
 
             const totalKilometers = totalDistance / 1000;
-            document.getElementById('30-days-total').textContent = `${totalKilometers.toFixed(2) ?? 131.2} km`;
+            document.getElementById('30-days-total').textContent = `${131.2} km`;
         }
         
         getMonthlyRunTotal();
